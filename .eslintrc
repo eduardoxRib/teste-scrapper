@@ -1,0 +1,36 @@
+{
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "ignorePatterns": [".eslintrc", "dist", "node_modules", "@generated"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "singleQuote": true,
+        "trailingComma": "none",
+        "tabWidth": 2,
+        "semi": false,
+        "printWidth": 70,
+        "jsxSingleQuote": true,
+        "bracketSpacing": true,
+        "bracketSameLine": false,
+        "arrowParens": "avoid"
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "no-useless-constructor": ["off"]
+  }
+}

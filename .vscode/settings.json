@@ -1,0 +1,28 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "never"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.tabSize": 2
+    },
+    "files.watcherExclude": {
+        "**/@generated/**": true,
+        "**/dist/**": true,
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/env/**": true,
+        "**/venv/**": true,
+        "env-*": true
+    },
+    "search.exclude": {
+        "**/@generated/**": true,
+        "**/dist/**": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/env": true,
+        "**/venv": true
+    }
+}

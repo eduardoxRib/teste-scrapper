@@ -18,10 +18,12 @@ process.on('unhandledRejection', reason => {
 fastify.get('/search', function (request, reply) {
   const random = getRandomIntInclusive(1, 100)
   if (random <= 10) {
+    console.log('Service Unavailable - ', new Date().toLocaleDateString())
     return reply.status(503).send('Service Unavailable')
   }
   
   const query = request.query?.text
+  console.log(`${query} - ${new Date().toLocaleDateString()}`)
 
   if (!query || typeof query !== 'string') {
     return reply.status(400).send({ error: 'Invalid query.' })

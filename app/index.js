@@ -18,12 +18,12 @@ process.on('unhandledRejection', reason => {
 fastify.get('/search', function (request, reply) {
   const random = getRandomIntInclusive(1, 100)
   if (random <= 10) {
-    console.log('Service Unavailable - ', new Date().toLocaleDateString())
+    console.info('Service Unavailable - ', new Date())
     return reply.status(503).send('Service Unavailable')
   }
   
   const query = request.query?.text
-  console.log(`${query} - ${new Date().toLocaleDateString()}`)
+  console.info(`${query} - ${new Date()}`)
 
   if (!query || typeof query !== 'string') {
     return reply.status(400).send({ error: 'Invalid query.' })
@@ -44,7 +44,7 @@ fastify.get('/search', function (request, reply) {
   reply.status(404).send('Product not found.')
 })
 
-fastify.listen({ port: 26500, host: '127.0.0.1' }, function (err, address) {
+fastify.listen({ port: 26500, host: '0.0.0.0' }, function (err, address) {
   if (err) {
     fastify.log.error(err)
     process.exit(1)

@@ -44,7 +44,7 @@ fastify.get('/search', function (request, reply) {
   reply.status(404).send('Product not found.')
 })
 
-fastify.listen({ port: 26500 }, function (err, address) {
+fastify.listen({ port: 26500, host: '127.0.0.1' }, function (err, address) {
   if (err) {
     fastify.log.error(err)
     process.exit(1)
